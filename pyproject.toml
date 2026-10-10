@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nanomatkit"
+version = "0.1.0"
+description = "Materials-science tools: FCC nanoparticle construction with surface-site and generalized-coordination analysis, powder XRD of cubic crystals with Scherrer and Williamson-Hall broadening, and simulation-box composition."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Sibasankar Panigrahy" }]
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.21"]
+keywords = ["nanoparticles", "generalized coordination number", "XRD", "Scherrer", "molecular dynamics", "materials science"]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Intended Audience :: Science/Research", "Topic :: Scientific/Engineering :: Chemistry", "Topic :: Scientific/Engineering :: Physics"]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.5"]
+test = ["pytest>=7"]
+
+[project.scripts]
+nanomatkit = "nanomatkit.cli:main"
+
+[project.urls]
+Homepage = "https://siba-p.github.io/software/"
+Source = "https://github.com/siba-p/nanomatkit"
+
+[tool.setuptools.packages.find]
+where = ["src"]
